@@ -1,0 +1,36 @@
+body {
+    background-color: yellow;
+}
+
+.tablet {
+    display: none;
+}
+
+.desktop {
+    display: none;
+}
+
+@media screen and (min-width: 600px) {
+    body {
+        background-color: red;
+    }
+    .mobiil {
+        display: none;
+    }
+    .tablet {
+        display: block;
+    }
+
+}
+
+@media screen and (min-width: 900px) {
+    body {
+        background-color: orange;
+    }
+    .tablet {
+        display: none;
+    }
+    .desktop {
+        display: block;
+    }
+}

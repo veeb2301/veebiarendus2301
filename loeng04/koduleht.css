@@ -26,14 +26,14 @@ header img {
 nav {
     background-color: lightcoral;
     width: 100%;
-    height: 50px;
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 nav ul {
-    display: flex;
+    display: block;
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -68,8 +68,7 @@ nav ul li a {
 }
 
 .reklaamipaan {
-    display: flex;
-    justify-content: center;
+    display: none;
 }
 
 .reklaamipaan a
@@ -79,6 +78,21 @@ nav ul li a {
 
 .reklaamipaan img {
     width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+    .reklaamipaan {
+        display: flex;
+        justify-content: center;
+    }
+
+    nav {
+        height: 50px;
+    }
+    
+    nav ul {
+        display: flex;
+    }
 }
 
 
