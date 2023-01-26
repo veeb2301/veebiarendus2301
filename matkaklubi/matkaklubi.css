@@ -1,9 +1,22 @@
+html {
+    font-size: 14px;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
 .paiskonteiner {
     width: 100%;
     height: 778px;
     background-image: url('./assets/Hills.png');
     background-position: center;
     background-size: cover;
+}
+
+.paiserida {
+    display: flex;
+    align-items: center;
 }
 
 .pais-logoala {
@@ -22,4 +35,78 @@
     line-height: 33px;
     text-transform: uppercase;
     width: 100px;
+}
+
+.pais-menyy {
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+	font-size: 1.19rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 2.67px;
+    margin-left: auto
+}
+
+.pais-menyy ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.pais-menyy li {
+    padding: 0px;
+    margin-left: 10px;
+    min-width: 100px;
+}
+
+.pais-menyy a {
+    color: #0B0B0B;
+}
+
+.pealkiri_pilt {
+    display: none;
+}
+
+.rida {
+    display: flex;
+}
+
+.liblikas1 {
+    width: 75.27px;
+    height: 66.04px;
+    margin-top: -40px;
+    margin-left: auto;
+}
+
+.liblikas2 {
+    width: 60px;
+    height: 32px;
+    margin-left: -60px;
+}
+
+.pealkiri-kastid {
+    padding-top: 40px;
+}
+
+.pealkiri-kastid h2 {
+    font-size: 2.83rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.pealkiri-kastid h1 {
+    font-size: 4.31rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+
+@media screen and (min-width: 768px) {
+    .pealkiri_pilt {
+        display: block;
+    }
+
+    .pealkiri-kastid {
+        padding-top: 230px;
+    }
 }
