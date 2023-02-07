@@ -100,6 +100,41 @@ body {
     text-transform: uppercase;
 }
 
+.pealispilt {
+    overflow: hidden;
+}
+
+.pealispilt .matkaja {
+    width: 750px;
+    height: 750px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: -400px;
+}
+
+.pealispilt .vari {
+    width: 1087px;
+    height: 87px;
+    margin-top: -37px;
+    margin-left: -178px;
+}
+
+.nupp-paises {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: bolder;
+    letter-spacing: 2.25px;
+    font-size: 12px;
+    line-height: 46px;
+    padding-left: 22px;
+    padding-right: 22px;
+    border-radius: 0px;
+    color: white;
+    background-color: black;
+    margin-top: 20px;
+}
+
+
 
 @media screen and (min-width: 768px) {
     .pealkiri_pilt {
