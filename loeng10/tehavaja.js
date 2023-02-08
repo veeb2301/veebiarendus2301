@@ -14,7 +14,7 @@ const ylesanne2 = {
 const ylesanne3 = {
     kirjeldus: 'Jookse kolm korda nädalas 3 kilomeetrit',
     olulisus: 4,
-    kasTehtud: false,
+    kasTehtud: true,
     kategooria: 'heaolu'
 }
 
@@ -24,18 +24,26 @@ const ylesanded = [
     ylesanne3
 ]
 
+function muudaKasTehtudVaartusVastupidiseks(index) {
+    const ylesanne = ylesanded[index]
+    ylesanne.kasTehtud = !ylesanne.kasTehtud
+    valjastaYlesanded()
+}
+
 // parameeter  - objekt ylesanne
 // tagastab - teksti kujul ühe ülesande html-i
-function koostaYlesandeHTML(ylesanne) {
+function koostaYlesandeHTML(ylesanne, index) {
     let margitud = ''
+    let tehtud = ''
 
     if (ylesanne.kasTehtud) {
         margitud = 'checked'
+        tehtud = 'tehtud'
     }
     
     const ylesanneHtml = `
-    <div class="ylesanne row">
-        <div class="kasTehtud col-1"><input type="checkbox" name="kasTehtud" ${margitud} ></div>
+    <div class="ylesanne row ${tehtud}">
+        <div class="kasTehtud col-1"><input onclick="muudaKasTehtudVaartusVastupidiseks(${index})" type="checkbox" name="kasTehtud" ${margitud} ></div>
         <div class="kirjeldus col-6">${ylesanne.kirjeldus}</div>
         <div class="kategooria col-3">${ylesanne.kategooria}</div>
         <div class="oluisus col-2">${ylesanne.olulisus}</div>
@@ -44,12 +52,34 @@ function koostaYlesandeHTML(ylesanne) {
     return ylesanneHtml
 }
 
+function valjastaYlesanded() {
+    let koguValjundHtml = ''
 
-let koguValjundHtml = ''
-
-for (let ylesanne of ylesanded) {
-    koguValjundHtml += koostaYlesandeHTML(ylesanne)
+    let index = 0
+    for (let ylesanne of ylesanded) {
+        koguValjundHtml += koostaYlesandeHTML(ylesanne, index)
+        index++
+    }
+    
+    document.getElementById('valjund').innerHTML =  koguValjundHtml
 }
 
-//vajalik esmase väljund joonistamiseks
-document.getElementById('valjund').innerHTML =  koguValjundHtml
+
+function lisaUusYlesanne() {
+    const ylesandeTekst = document.getElementById('ylesanne').value
+    const olulisus = document.getElementById('olulisus').value
+    const ylesanne = {
+        kirjeldus: ylesandeTekst,
+        olulisus: olulisus,
+        kasTehtud: false,
+        kategooria: 'heaolu'
+    }
+
+    ylesanded.push(ylesanne)
+    valjastaYlesanded()
+
+}
+
+ //vajalik esmase väljund joonistamiseks
+ valjastaYlesanded()
+
