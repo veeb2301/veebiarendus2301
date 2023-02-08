@@ -136,6 +136,7 @@ body {
 
 
 
+
 @media screen and (min-width: 768px) {
     .pealkiri_pilt {
         display: block;
@@ -143,5 +144,14 @@ body {
 
     .pealkiri-kastid {
         padding-top: 230px;
+    }
+
+    .uudised {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .uudised .card {
+        width: 47%;
     }
 }
